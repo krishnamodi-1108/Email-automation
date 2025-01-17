@@ -1,0 +1,29 @@
+Title: Automated Emails
+Description: An app that reads user names, email addresses, and interests from an Excel file and sends an email to each user
+with news feeds about the user's interest every morning.
+Objects: ExcelFile:
+            filepath
+            get_data()
+         Email:
+             sender
+             receiver
+             subject
+             body
+             send()
+         NewsFeed:
+            data
+            get()
+
+optional : User:
+            name
+            email
+            interest
+
+** NOTE : Classes for standard class like excel file extration/email creation already exists in 3rd party libraries,
+so better to use the existing classes than creating from scratch
+
+API : https://newsapi.org/docs
+app password creation : https://myaccount.google.com/apppasswords
+
+
+repl - read eval print loop
