@@ -1,4 +1,7 @@
 # API Key: 11b809c11cf347e2bf67c944404ce369
+import datetime
+from datetime import timedelta
+
 import requests
 from pprint import pprint
 
@@ -44,6 +47,8 @@ class NewsFeed:
 
 
 if __name__ == "__main__":
-    newsFeed = NewsFeed(interest='nasa',from_date='2025-01-15',to_date='2025-01-15',language='en')
-    newsFeed = NewsFeed('nasa','2025-01-13','2025-01-13','en')
+    currDay = datetime.date.today()
+    prevDay = currDay - timedelta(days=3)
+    newsFeed = NewsFeed(interest='nasa',from_date=prevDay,to_date=currDay,language='en')
+    # newsFeed = NewsFeed('nasa',prevDay,currDay,'en')
     print(newsFeed.get_data())
